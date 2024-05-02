@@ -1,0 +1,116 @@
+*,
+*::before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    background: linear-gradient(135deg, rgb(237, 105, 105), rgb(237, 42, 42));
+}
+
+
+.container{
+    width: 40%;
+    min-width: 450px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 30px;
+    padding: 30px 40px;
+}
+#newtask{
+    position: relative;
+    background-color: #ffffff;
+    padding: 30px 20px;
+    border-radius: 5px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+
+#newtask input{
+
+width:70% ;
+height: 45px;
+font-family: 'Poppins', sans-serif;
+font-size: 15px;
+border: 2px solid #ccc;
+color: #111111;
+font-weight: 500;
+position: relative;
+border-radius: 5px;
+
+}
+
+#newtask input:focus{
+    outline: none;
+    border-color: violet;
+}
+#newtask button
+{
+    position: relative;
+    float: right;
+    width: 20%;
+    height: 35px;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: blue;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    outline: none;
+}
+
+
+#tasks{
+    background-color: #ffffff;
+    padding: 30px 20px ;
+    margin-top: 60px;
+    border-radius: 10px;
+    box-shadow: 
+    0 15px 30px rgba(0,0,0,0.3);
+    width: 100%;
+    position: relative;
+}
+
+
+.task{
+    background-color: #ffffff;
+    height: 50px;
+    padding: 5px 10px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+.task span{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    /* color: #0e27e4; */
+}
+
+.task button{
+    background-color:  #0e27e4;
+
+    color: #ffffff;
+    height: 100%;
+    width: 40px;
+    border-radius: 5px;
+    border: none;
+    cursor: 
+    pointer;
+    outline: none;
+
+}
+.completed{
+    text-decoration: line-through;
+    color: green;
+    font-size: 10px;
+}
