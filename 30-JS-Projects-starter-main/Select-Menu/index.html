@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slect Menu</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="selector">
+        <div id="select-field">
+          <p id="slectText">Select Social Media App</p>
+          <img src="images/arrow.png" id="arrow"/>
+        </div>
+
+        <ul id="list" class="hide">
+            <li class="options">
+              <img src="images/facebook.png" />
+              <p>Facebook</p>
+            </li>
+            <li class="options">
+              <img src="images/instagram.png" />
+              <p>Instagram</p>
+            </li>
+            <li class="options">
+              <img src="images/whatsapp.png" />
+              <p>Whatsapp</p>
+            </li>
+            <li class="options">
+              <img src="images/youtube.png" />
+              <p>Youtube</p>
+            </li>
+            <li class="options">
+              <img src="images/pintrest.png" />
+              <p>Pintrest</p>
+            </li>
+            <li class="options">
+              <img src="images/twitter.png" />
+              <p>Twitter</p>
+            </li>
+          </ul>
+      </div>
+      
+    </div>
+
+    <script>
+        let select = document.getElementById("select-field");
+        let slectText = document.getElementById("slectText");
+        let options = document.querySelectorAll('.options')
+        let list = document.getElementById("list")
+        let arrow = document.getElementById("arrow")
+
+        select.onclick = function(){
+            list.classList.toggle("hide");
+            arrow.classList.toggle("rotate")
+        }
+
+        for(i of options){
+           i.onclick = function(){
+            slectText.innerHTML = this.textContent;
+            list.classList.toggle("hide");
+            arrow.classList.toggle("rotate")
+           }
+        }
+    </script>
+  </body>
+</html>

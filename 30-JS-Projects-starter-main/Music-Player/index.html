@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+      src="https://kit.fontawesome.com/83f5707102.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="hero">
+      <div class="music-player">
+        <nav>
+          <div class="circle">
+            <i class="fa-solid fa-angle-left"></i>
+          </div>
+          <div class="circle">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </nav>
+        <img src="media/3602.webp" class="songImg" />
+        <h1>Popular</h1>
+        <p>Weeknd Ft. Playboy Carti & Madona</p>
+
+        <audio id="song">
+          <source src="media/popular.mp3" type="audio/mpeg" />
+        </audio>
+        <input id="range" type="range" value="0" />
+
+        <div class="controls">
+          <div>
+            <i class="fa-solid fa-backward"></i>
+          </div>
+          <div onclick="playPause()">
+            <i class="fa-solid fa-play" id="controlIcon"></i>
+          </div>
+          <div>
+            <i class="fa-solid fa-forward"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+        let range = document.getElementById("range");
+        let song = document.getElementById("song");
+        let controlIcon = document.getElementById("controlIcon")
+
+
+        song.onloadedmetadata = function(){
+            range.max = song.duration;
+            range.value = song.currentTime
+        }
+
+        function playPause(){
+            if(controlIcon.classList.contains("fa-pause")){
+                song.pause();
+                controlIcon.classList.remove("fa-pause");
+                controlIcon.classList.add("fa-play")
+            }
+            else{
+                song.play();
+                controlIcon.classList.remove("fa-play");
+                controlIcon.classList.add("fa-pause")
+
+            }
+        }
+
+        if(song.play()){
+            setInterval(()=>{
+                range.value = song.currentTime;
+            }, 500)
+        }
+
+        range.onchange = function(){
+            song.play();
+            song.currentTime = range.value;
+            controlIcon.classList.remove("fa-play");
+            controlIcon.classList.add("fa-pause")
+
+        }
+
+
+    </script>
+  </body>
+</html>
